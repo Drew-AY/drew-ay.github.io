@@ -47,14 +47,15 @@ layout: default
   </div>
 </section>
 
-<section style="margin-top: 4rem;">
-  <h2 style="text-align: center; margin-bottom: 2rem;">Announcements</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+<section style="margin-top: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Live Updates</h2>
+  <div style="border-left: 3px solid var(--accent); padding-left: 2rem;">
     {% for announcement in site.data.announcements %}
-    <div style="padding: 1.5rem; background-color: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: 8px; border: 1px solid var(--border); border-left: 4px solid var(--accent);">
-      <p style="margin: 0 0 0.5rem 0; color: var(--text-secondary); font-size: 0.85rem;">{{ announcement.date }}</p>
-      <h3 style="margin: 0.5rem 0; color: var(--accent); font-size: 1.1rem;">{{ announcement.title }}</h3>
-      <p style="margin: 0.5rem 0 0 0; color: var(--text-primary); line-height: 1.6;">{{ announcement.description }}</p>
+    <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); position: relative;">
+      <div style="position: absolute; left: -2.35rem; width: 16px; height: 16px; background-color: var(--accent); border-radius: 50%; top: 5px;"></div>
+      <p style="margin: 0 0 0.5rem 0; color: var(--accent); font-weight: 600; font-size: 0.9rem;">{{ announcement.date }}</p>
+      <h3 style="margin: 0.5rem 0; color: var(--text-primary); font-size: 1.1rem;">{{ announcement.title }}</h3>
+      <p style="margin: 0.5rem 0 0 0; color: var(--text-secondary); line-height: 1.6;">{{ announcement.description }}</p>
     </div>
     {% endfor %}
   </div>

@@ -222,6 +222,11 @@ li {
   align-items: center;
   padding: 4rem 2rem;
   margin-bottom: 3rem;
+  direction: rtl;
+}
+
+.hero > * {
+  direction: ltr;
 }
 
 .hero-content {
