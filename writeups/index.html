@@ -1,0 +1,17 @@
+---
+layout: page
+title: Writeups
+---
+
+<p>Technical deep-dives, tutorials, and detailed explorations of ML topics and techniques.</p>
+
+<div class="listing">
+  {% for writeup in site.writeups %}
+  <div class="listing-item">
+    <a href="{{ writeup.url | relative_url }}">{{ writeup.title }}</a>
+    {% if writeup.date %}
+      <span class="listing-date">{{ writeup.date | date: "%b %Y" }}</span>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>

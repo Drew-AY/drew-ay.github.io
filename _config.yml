@@ -1,0 +1,44 @@
+title: Andrew Danquah Addo-Yobo
+description: ML Engineer | MLOps | AI Systems
+url: https://drew-yobo.github.io
+baseurl: ""
+author: Andrew Danquah Addo-Yobo
+email: drew.yobo@gmail.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+  writeups:
+    output: true
+    permalink: /writeups/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "writeups"
+    values:
+      layout: "writeup"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from processing
+exclude:
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - .claude/
