@@ -7,7 +7,6 @@ email: drew.yobo@gmail.com
 
 # Build settings
 markdown: kramdown
-theme: minima
 
 # Collections
 collections:
