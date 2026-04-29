@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Dive: Understanding Transformer Architectures - Andrew Danquah Addo-Yobo</title>
+  <meta name="description" content="ML Engineer | MLOps | AI Systems">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Andrew Danquah Addo-Yobo" />
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <span class="logo-text">ADD</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/projects/" class="nav-link">Projects</a></li>
+      <li><a href="/blog/" class="nav-link">Blog</a></li>
+      <li><a href="/writeups/" class="nav-link">Writeups</a></li>
+      <li><a href="/certifications/" class="nav-link">Certifications</a></li>
+      <li><a href="/announcements/" class="nav-link">Announcements</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main class="main-content">
+    <article class="writeup">
+  <header class="writeup-header">
+    <h1>Deep Dive: Understanding Transformer Architectures</h1>
+    
+      <p class="subtitle">From self-attention to modern LLMs</p>
+    
+    
+      <div class="writeup-meta">
+        <time datetime="2026-03-15T00:00:00-05:00">
+          March 15, 2026
+        </time>
+      </div>
+    
+    
+      <div class="tags">
+        
+          <span class="tag">Deep Learning</span>
+        
+          <span class="tag">Transformers</span>
+        
+          <span class="tag">Neural Networks</span>
+        
+          <span class="tag">LLMs</span>
+        
+      </div>
+    
+  </header>
+
+  <div class="writeup-content">
+    <p>The Transformer architecture revolutionized natural language processing and beyond. This writeup explores the mechanics that make them work, from the ground up.</p>
+
+<h2 id="the-foundation-self-attention">The Foundation: Self-Attention</h2>
+
+<p>At the heart of transformers is the self-attention mechanism. It allows each token to attend to every other token in the sequence, learning relationships regardless of distance.</p>
+
+<h3 id="attention-formula">Attention Formula</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Attention(Q, K, V) = softmax(QK^T / √d_k)V
+</code></pre></div></div>
+
+<p>Where:</p>
+<ul>
+  <li><strong>Q</strong> (Query): What are we looking for?</li>
+  <li><strong>K</strong> (Key): What information do I have?</li>
+  <li><strong>V</strong> (Value): What information should I return?</li>
+</ul>
+
+<p>The scaling factor <code class="language-plaintext highlighter-rouge">√d_k</code> prevents the dot products from becoming too large.</p>
+
+<h2 id="multi-head-attention">Multi-Head Attention</h2>
+
+<p>Rather than computing attention once, we compute it multiple times in parallel (multiple “heads”), each learning different relationships. This allows the model to focus on different aspects simultaneously.</p>
+
+<h2 id="positional-encoding">Positional Encoding</h2>
+
+<p>Since attention has no inherent sense of order, we encode position information into the input embeddings using sinusoidal functions. This tells the model “token at position 0”, “token at position 1”, etc.</p>
+
+<h2 id="the-full-transformer-block">The Full Transformer Block</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input
+  ↓
+[Layer Norm] → [Multi-Head Attention] → [Add &amp; Norm]
+  ↓
+[Feed-Forward Network] → [Add &amp; Norm]
+  ↓
+Output
+</code></pre></div></div>
+
+<p>Each block contains:</p>
+<ol>
+  <li><strong>Multi-head self-attention</strong></li>
+  <li><strong>Feed-forward network</strong> (two dense layers with activation)</li>
+  <li><strong>Residual connections</strong> (Add)</li>
+  <li><strong>Layer normalization</strong></li>
+</ol>
+
+<h2 id="stacking-blocks">Stacking Blocks</h2>
+
+<p>Modern transformers stack many of these blocks (GPT-3 has 96 layers!). Each layer refines representations learned by previous layers.</p>
+
+<h2 id="from-decoder-to-gpt">From Decoder to GPT</h2>
+
+<p>GPT (Generative Pre-trained Transformer) uses the decoder part of the transformer, applying causal masking so attention only looks at previous tokens. This is perfect for text generation.</p>
+
+<h2 id="key-insights">Key Insights</h2>
+
+<ol>
+  <li><strong>Parallelization</strong>: Unlike RNNs, all tokens can be processed in parallel</li>
+  <li><strong>Long-range dependencies</strong>: Self-attention can capture dependencies across the entire sequence</li>
+  <li><strong>Transfer learning</strong>: Pre-training on large corpora + fine-tuning on specific tasks works incredibly well</li>
+</ol>
+
+<h2 id="modern-improvements">Modern Improvements</h2>
+
+<p>Since the original 2017 paper, researchers have proposed many optimizations:</p>
+<ul>
+  <li><strong>Flash Attention</strong>: Faster attention computation</li>
+  <li><strong>Sparse Attention</strong>: Only attending to a subset of tokens</li>
+  <li><strong>Mixture of Experts</strong>: Using different sub-networks for different inputs</li>
+  <li><strong>Position Interpolation</strong>: Extending context length</li>
+</ul>
+
+<h2 id="practical-implications">Practical Implications</h2>
+
+<p>Understanding these mechanics helps when:</p>
+<ul>
+  <li>Debugging transformer models</li>
+  <li>Choosing between architectures</li>
+  <li>Understanding failure modes</li>
+  <li>Optimizing for latency and memory</li>
+</ul>
+
+<p>Transformers have become the workhorse of modern AI. The principles we’ve covered here extend to vision (ViT), multimodal (CLIP), and retrieval tasks.</p>
+
+  </div>
+</article>
+
+<nav class="back-link">
+  <a href="/writeups/">← Back to Writeups</a>
+</nav>
+
+  </main>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2026 Andrew Danquah Addo-Yobo. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/andrewdyobo" target="_blank">LinkedIn</a>
+      <a href="mailto:drew.yobo@gmail.com">Email</a>
+      <a href="https://github.com/drew-yobo" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+
+  
+</body>
+</html>

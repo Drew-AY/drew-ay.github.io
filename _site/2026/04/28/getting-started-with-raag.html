@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with Retrieval-Augmented Generation - Andrew Danquah Addo-Yobo</title>
+  <meta name="description" content="ML Engineer | MLOps | AI Systems">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Andrew Danquah Addo-Yobo" />
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <span class="logo-text">ADD</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/projects/" class="nav-link">Projects</a></li>
+      <li><a href="/blog/" class="nav-link">Blog</a></li>
+      <li><a href="/writeups/" class="nav-link">Writeups</a></li>
+      <li><a href="/certifications/" class="nav-link">Certifications</a></li>
+      <li><a href="/announcements/" class="nav-link">Announcements</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main class="main-content">
+    <article class="post">
+  <header class="post-header">
+    <h1>Getting Started with Retrieval-Augmented Generation</h1>
+    <div class="post-meta">
+      <time datetime="2026-04-28T00:00:00-05:00">
+        April 28, 2026
+      </time>
+      
+        <span class="author">by Andrew Danquah Addo-Yobo</span>
+      
+    </div>
+  </header>
+
+  <div class="post-content">
+    <p>Retrieval-Augmented Generation (RAG) has become a game-changer for building AI applications that need to work with domain-specific knowledge. In this post, I’ll walk you through the fundamentals and how to build your first RAG system.</p>
+
+<h2 id="what-is-rag">What is RAG?</h2>
+
+<p>RAG combines the power of large language models (LLMs) with custom knowledge bases. Instead of relying solely on an LLM’s training data, RAG systems retrieve relevant information from a database and use it to generate more accurate, contextual responses.</p>
+
+<h2 id="why-rag">Why RAG?</h2>
+
+<p>Traditional LLMs have several limitations:</p>
+<ul>
+  <li><strong>Knowledge cutoff</strong>: They only know information from their training data</li>
+  <li><strong>Hallucinations</strong>: They can generate plausible-sounding but incorrect information</li>
+  <li><strong>Domain specificity</strong>: They lack specialized knowledge for niche domains</li>
+</ul>
+
+<p>RAG solves these by augmenting the LLM with external knowledge.</p>
+
+<h2 id="basic-architecture">Basic Architecture</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User Query
+    ↓
+[Vector Embedding]
+    ↓
+[Semantic Search] → Document Database
+    ↓
+[Context + Query] → [LLM] → Response
+</code></pre></div></div>
+
+<h2 id="building-your-first-rag">Building Your First RAG</h2>
+
+<p>The basic steps:</p>
+
+<ol>
+  <li><strong>Prepare Documents</strong>: Break large documents into chunks</li>
+  <li><strong>Create Embeddings</strong>: Convert text to vector representations</li>
+  <li><strong>Store Vectors</strong>: Use a vector database (FAISS, Pinecone, Weaviate)</li>
+  <li><strong>Retrieve</strong>: Find relevant chunks for a query</li>
+  <li><strong>Generate</strong>: Pass context to LLM for response generation</li>
+</ol>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Start small with LangChain and a simple in-memory vector store. Once you understand the flow, scale to production databases.</p>
+
+<p>Key libraries to explore:</p>
+<ul>
+  <li><strong>LangChain</strong>: Simplifies RAG orchestration</li>
+  <li><strong>OpenAI/Claude API</strong>: For LLM calls</li>
+  <li><strong>FAISS</strong>: Fast vector similarity search</li>
+  <li><strong>Hugging Face Transformers</strong>: For embedding models</li>
+</ul>
+
+<p>The RAG landscape is evolving rapidly. Advanced techniques like multi-hop retrieval, adaptive chunking, and self-improving systems are becoming more accessible.</p>
+
+<p>What are you planning to build with RAG? Let me know!</p>
+
+  </div>
+
+  <nav class="post-nav">
+    
+    
+  </nav>
+</article>
+
+  </main>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2026 Andrew Danquah Addo-Yobo. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/andrewdyobo" target="_blank">LinkedIn</a>
+      <a href="mailto:drew.yobo@gmail.com">Email</a>
+      <a href="https://github.com/drew-yobo" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+
+  
+</body>
+</html>
