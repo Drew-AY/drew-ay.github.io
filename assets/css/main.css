@@ -180,6 +180,7 @@ a:hover {
 .btn {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   padding: 0.6rem 1.3rem;
   border-radius: var(--radius-pill);
   font-weight: 400;
@@ -190,6 +191,20 @@ a:hover {
   letter-spacing: -0.01em;
   transition: var(--transition);
   white-space: nowrap;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.btn-primary .btn-icon {
+  color: white;
+}
+
+.btn-secondary .btn-icon {
+  color: var(--accent);
 }
 
 .btn-primary {
@@ -795,6 +810,158 @@ li {
   margin: 0;
 }
 
+/* Education Journey */
+.education-journey {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  padding: 2rem 0;
+  overflow-x: auto;
+}
+
+.education-journey::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 24px;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  z-index: 0;
+}
+
+.journey-step {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.journey-logo {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.journey-logo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+}
+
+.journey-logo img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.journey-year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.journey-line {
+  width: 3px;
+  height: 12px;
+  background-color: var(--accent);
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.journey-milestone {
+  flex: 1;
+}
+
+.journey-degree {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.journey-school {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.journey-degree-group {
+  margin-bottom: 1rem;
+}
+
+.journey-degree-group:last-child {
+  margin-bottom: 0;
+}
+
+.journey-flag {
+  font-size: 1rem;
+  margin-left: 0.35rem;
+}
+
+/* Publications */
+.publication-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.publication-item:last-child {
+  border-bottom: none;
+}
+
+.pub-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.pub-meta {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.pub-venue {
+  margin: 0.35rem 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.pub-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.pub-link:hover {
+  color: var(--accent-hover);
+}
+
 /* Footer */
 .footer {
   background-color: var(--bg-page);
@@ -817,18 +984,29 @@ li {
 
 .footer-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  align-items: center;
 }
 
-.footer-links a {
+.footer-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   color: var(--text-secondary);
   text-decoration: none;
   transition: var(--transition);
 }
 
-.footer-links a:hover {
+.footer-icon-link:hover {
   color: var(--accent);
-  text-decoration: none;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 /* Responsive Design */

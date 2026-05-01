@@ -1,0 +1,19 @@
+---
+layout: page
+title: Education
+---
+
+<p>Academic background spanning engineering and data science, culminating in expertise across both domains.</p>
+
+<div class="education-timeline">
+  {% for edu in site.data.education %}
+  <div class="education-entry">
+    <div class="education-dot"></div>
+    <div class="education-card">
+      <h3 class="education-degree">{{ edu.degree }}</h3>
+      <p class="education-school">{{ edu.school }}</p>
+      <p class="education-meta">{{ edu.location }} • {{ edu.year }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>

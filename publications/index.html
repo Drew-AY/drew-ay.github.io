@@ -1,0 +1,25 @@
+---
+layout: page
+title: Publications
+---
+
+<p>Research papers, articles, and published work.</p>
+
+{% if site.data.publications %}
+<div class="listing">
+  {% for pub in site.data.publications %}
+  <div class="publication-item">
+    <div>
+      <h3 class="pub-title">{{ pub.title }}</h3>
+      <p class="pub-meta">{{ pub.authors }} • {{ pub.year }}</p>
+      <p class="pub-venue">{{ pub.journal }}</p>
+      {% if pub.link %}
+        <a href="{{ pub.link }}" target="_blank" class="pub-link">Read Publication →</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p style="color: var(--text-secondary); margin-top: 2rem;">Publications coming soon.</p>
+{% endif %}
