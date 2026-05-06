@@ -289,6 +289,13 @@ a:hover {
   flex-wrap: wrap;
 }
 
+/* Section Wrapper */
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* Section Label */
 .section-label {
   display: block;
@@ -297,20 +304,25 @@ a:hover {
   text-transform: uppercase;
   font-weight: 600;
   color: var(--accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Featured Projects */
 .featured-projects {
   background-color: var(--bg-alt);
+  padding: 5rem 0 0 0;
+  margin: 5rem 0 0 0;
+}
+
+.featured-projects .section-wrapper {
   padding: 5rem 2rem;
-  margin: 5rem -2rem 0;
 }
 
 .featured-projects h2 {
   text-align: left;
-  margin-bottom: 2.5rem;
+  margin: 0 0 2rem 0;
   border-bottom: none;
+  padding: 0;
 }
 
 .projects-grid {
@@ -388,15 +400,20 @@ a:hover {
 
 /* Live Updates / Timeline */
 .live-updates {
-  padding: 5rem 2rem;
-  margin: 0 -2rem;
+  padding: 5rem 0 0 0;
+  margin: 5rem 0 0 0;
   background-color: var(--bg-card);
+}
+
+.live-updates .section-wrapper {
+  padding: 5rem 2rem;
 }
 
 .live-updates h2 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem 0;
   border-bottom: none;
+  padding: 0;
 }
 
 .updates-feed {
@@ -404,6 +421,7 @@ a:hover {
   margin: 0 auto;
   position: relative;
   padding-left: 2.5rem;
+  padding-right: 0;
 }
 
 .updates-feed::before {
